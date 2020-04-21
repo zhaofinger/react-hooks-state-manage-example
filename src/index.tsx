@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+import UnstatedNext from './unstated-next';
+import ConstateStateManage from './constate';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <UnstatedNext />
+    <ConstateStateManage />
   </React.StrictMode>,
   document.getElementById('root')
 );
