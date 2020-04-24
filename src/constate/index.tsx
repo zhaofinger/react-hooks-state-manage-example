@@ -1,8 +1,7 @@
 import React  from 'react';
-import constate from 'constate';
-import useCounter from './counter';
+import Counter from './counter';
 
-const [CounterProvider, useCounterContext] = constate(useCounter);
+const [CounterProvider, useCounterContext] = Counter;
 
 function CounterDisplay() {
   const { count, increment, decrement } = useCounterContext();
@@ -23,7 +22,7 @@ const CounterShow = () => {
 function ConstateStateManage() {
   // 5️⃣ Wrap your components with Provider
   return (
-    <CounterProvider initState={1000}>
+    <CounterProvider initState={999}>
       <h1>constate state manage</h1>
       <CounterDisplay />
       <CounterShow />

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import constate from 'constate';
 
 
 function useCounter({ initState = 0 }) {
@@ -8,4 +9,6 @@ function useCounter({ initState = 0 }) {
   return { count, increment, decrement };
 }
 
-export default useCounter;
+const Counter = constate(useCounter);
+
+export default Counter;

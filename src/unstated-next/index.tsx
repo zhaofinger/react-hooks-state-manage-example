@@ -1,31 +1,13 @@
 import React from 'react';
-import { createContainer } from 'unstated-next';
+import Counter from './counter';
+import CounterDisplay from './CounterDisplay';
+import CounterShow from './CounterShow';
 
-import useCounter from './counter';
-
-const Counter = createContainer(useCounter);
-
-
-function CounterDisplay() {
-  let counter = Counter.useContainer()
-  return (
-    <div>
-      <button onClick={counter.decrement}>-</button>
-      <span>{counter.count}</span>
-      <button onClick={counter.increment}>+</button>
-    </div>
-  )
-}
-
-const CounterShow = () => {
-  const { count } = Counter.useContainer()
-  return <>{count}</>;
-};
-
+// page
 function UnstatedNext() {
   // let counter = Counter.useContainer()
   return (
-    <Counter.Provider initialState={100}>
+    <Counter.Provider initialState={100000}>
       <h1>unstated-next state manage</h1>
       <CounterDisplay />
       <CounterShow />
